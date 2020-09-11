@@ -13,7 +13,7 @@ csvpath = os.path.join("Resources", "budget_data.csv")
 
 # Open the CSV
 
-change = []
+per_month = []
 average_list = []
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -23,7 +23,7 @@ with open(csvpath) as csvfile:
 
     #get a list of the changes from month to month
     for row in csvreader:
-        change.append(row[1]) 
+        per_month.append(row[1]) 
 
         
     #from the list then you can subtract each subsequent month from the previous one
@@ -37,7 +37,19 @@ with open(csvpath) as csvfile:
     average_is = sum(average_list) / len (average_list)
     
     print(f'The average change is {average_is}')
+    print(average_list)
+    print(max(average_list))
+    print(min(average_list))
     
+    
+    #how do I get the corresponding value pair in a list?
+    #the way you can do that is to look and print out the line in Excel
+    
+    
+#finding the greatest and least amount change:
+#the way to do that is from that list what you can do is call the greatest or the least number
+
+
     
 #finding the average change and in this way you need to be able to locate the change for each month
 #then you can subtract from month to month
@@ -52,7 +64,5 @@ with open(csvpath) as csvfile:
 # you can use a list comprehension to subtract a number from a previous number
 # or in this case what you can do is : 
 #select a range and then in the list you can do stuff to it
-
-    
     
 
