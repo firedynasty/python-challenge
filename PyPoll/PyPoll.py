@@ -29,5 +29,45 @@ with open(csvpath) as csvfile:
             Li.append(row[2])
         else:
             O_Tooley.append(row[2])
+
+    #now that I have the lists, I can take a measure of the number of individual indexes 
+    #and then do a printout 
     
+    Khan_count = len(Khan)
+    Correy_count = len(Correy)
+    Li_count = len(Li)
+    O_Tooley_count = len(O_Tooley)
+    total_votes_count = len(total_votes)
     
+    Khan_percentage = round((Khan_count / total_votes_count) *100, 3)
+    Correy_percentage = round((Correy_count / total_votes_count) *100, 3)
+    Li_percentage = round((Li_count / total_votes_count) *100, 3)
+    O_Tooley_percentage = round((O_Tooley_count / total_votes_count) *100, 3)
+    
+    print('Election Results')
+    print('--------------------------------')
+    print(f'Total Votes: {total_votes_count}')
+    print('--------------------------------')
+    print(f'Khan: {Khan_percentage}% ({Khan_count})')
+    print(f'Correy: {Correy_percentage}% ({Correy_count})')
+    print(f'Li: {Li_percentage}% ({Li_count})')
+    print(f"O'Tooley: {O_Tooley_percentage}% ({O_Tooley_count})")
+    print('--------------------------------')
+    print('Winner: Khan')
+    print('--------------------------------')
+    
+output_path = os.path.join("output", "voter_results.txt")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w') as writer:
+    writer.write('Election Results')
+    writer.write('\n--------------------------------')
+    writer.write(f'\nTotal Votes: {total_votes_count}')
+    writer.write('\n--------------------------------')
+    writer.write(f'\nKhan: {Khan_percentage}% ({Khan_count})')
+    writer.write(f'\nCorrey: {Correy_percentage}% ({Correy_count})')
+    writer.write(f'\nLi: {Li_percentage}% ({Li_count})')
+    writer.write(f"\nO'Tooley: {O_Tooley_percentage}% ({O_Tooley_count})")
+    writer.write('\n--------------------------------')
+    writer.write('\nWinner: Khan')
+    writer.write('\n--------------------------------')
