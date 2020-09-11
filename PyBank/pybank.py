@@ -42,20 +42,24 @@ with open(csvpath) as csvfile:
     print('FINANCIAL ANALYSIS')
     print('----------------------------------')
     
+    #set the max value and min value of profit into a variable
 
     greatest_increase = int(max(change_list))
     greatest_decrease = int(min(change_list))
     
 
+    #get the value of the index of where the value is in the list
     max_month_index = change_list.index(greatest_increase)
     min_month_index = change_list.index(greatest_decrease)
+    
+    #print the values
     print(f'Total months: {len(months)}')
     print(f'Total: {total}')
     print(f'The average change: {round(average_is,2)}')
     print(f'Greatest increase in profits: {months[max_month_index+1]} (${greatest_increase})')
     print(f'Greatest decrease in profits: {months[min_month_index+1]} (${greatest_decrease})' )
 
-output_path = os.path.join("output", "new.txt")
+output_path = os.path.join("output", "budget_analysis.txt")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path, 'w') as writer:
@@ -66,42 +70,3 @@ with open(output_path, 'w') as writer:
     writer.write(f'\nThe average change: {round(average_is,2)}')
     writer.write(f'\nGreatest increase in profits: {months[max_month_index+1]} (${greatest_increase})')
     writer.write(f'\nGreatest decrease in profits: {months[min_month_index+1]} (${greatest_decrease})')
-    
-
-
-
-
-
-    
-       
-        
-
-    
-    #create two lists using zip 
-    #why can't you write the new changes to another csv file?
-    #do it with zip
-    
-    
-        
-    
-#finding the greatest and least amount change:
-#the way to do that is from that list what you can do is call the greatest or the least number
-
-
-    
-#finding the average change and in this way you need to be able to locate the change for each month
-#then you can subtract from month to month
-
-#how do I get the previous row?
-
-#create a list
-#then from the list what you want to do is to subtract each other
-
-# Write a function that returns the arithmetic average for a list of numbers
-
-# you can use a list comprehension to subtract a number from a previous number
-# or in this case what you can do is : 
-#select a range and then in the list you can do stuff to it
-    
-
-
